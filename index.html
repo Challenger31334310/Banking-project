@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        input,button{
+            cursor: pointer;
+        }
+        .input{
+            display: flex;
+            justify-content: center;
+            margin: 10% auto;
+            background-color: burlywood;
+            flex-direction: column;
+            width: 65%;
+            padding: 1rem;
+            border-radius: 1rem;
+            border-top: 10px solid green;
+        }
+        input{
+            padding: 1rem;
+            margin-bottom: 1rem;
+            border-radius: 0.7rem;
+            width: 70%;
+            outline: none;
+            border: 2px solid yellow;
+            font-size: larger;
+            font-family: 'Times New Roman', Times, serif;
+            font-weight: 600;
+        }
+        button{
+            border-radius: 0.7rem;
+            width: 23%;
+            outline: none;
+            border: 2px solid yellow;
+            font-size: larger;
+            font-family: 'Times New Roman', Times, serif;
+            font-weight: 600; 
+            padding: 1rem;
+            background-color: black;
+            color: wheat;
+        }
+        .info{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+h1{
+    text-align: center;
+    border-bottom: 2px solid rgba(114, 45, 144, 0.589);
+    padding-bottom: 0.4rem;
+    font-family: cursive;
+    font-weight: 700;
+    font-variant: small-caps;
+    color: azure;
+}
+    </style>
+</head>
+<body>
+      
+    
+    <div class="input">
+        <h1>Bap ar bank </h1>
+        <h2>Log in</h2>
+        <input type="email" name="" id="email" placeholder="Enter your email">
+        <input type="password" name="" id="password" placeholder="Enter your password">
+        <div class="btn">
+            <button id="submit" >Submit</button>
+        </div>
+    </div>
+    <script>
+const submit_bt=document.getElementById("submit")
+const email_bt=document.getElementById("email")
+const pass_bt=document.getElementById("password")
+submit_bt.addEventListener("click",function(){
+    if(email_bt.value === "reshikroy@gmail.com" && pass_bt.value === "reshikroy"){
+       window.location.href="bank.html";
+    }
+})
+    </script>
+</body>
+</html>

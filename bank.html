@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .one {
+            background-color: red;
+            width: 40%;
+            height: 25vh;
+            padding: 3rem;
+            border-radius: 1rem
+        }
+
+        .two {
+            background-color: rgba(0, 55, 255, 0.336);
+            width: 40%;
+            height: 25vh;
+            padding: 3rem;
+            border-radius: 1rem
+        }
+
+        .three {
+            background-color: rgba(0, 255, 174, 0.336);
+            width: 40%;
+            height: 25vh;
+            padding: 3rem;
+            border-radius: 1rem;
+
+        }
+
+        .total {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 3rem;
+
+        }
+
+        .parent {
+            width: 70%;
+            margin: 0% auto;
+
+        }
+
+        input {
+            padding: 1rem;
+            border: 1px solid greenyellow;
+            border-radius: 0.6rem;
+            outline: none;
+            font-size: medium;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            font-weight: 700;
+            width: 80%;
+        }
+
+        p {
+            font-size: xx-large;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            font-weight: 900;
+        }
+
+        button {
+            padding: 0.7rem;
+            border-radius: 1rem;
+            font-size: medium;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            font-weight: 700;
+            margin-top: 0.6rem;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="parent">
+        <div class="info">
+            <h1> Lets go for money🫡!!!</h1>
+        </div>
+        <div class="total">
+            <div class="one">
+                <h2>Desposit</h2>
+                <p>$ <span id="taka">00</span></p>
+            </div>
+            <div class="two">
+                <h2>Withdraw</h2>
+                <p>$ <span id="tak">00</span></p>
+            </div>
+            <div class="three">
+                <h2>Balance</h2>
+                <p>$<span id="balance">1240</span></p>
+            </div>
+        </div>
+        <div class="total">
+            <div class="two">
+                <h1>Please Deposit</h1>
+                <input type="number" name="" id="deposit_field" placeholder="$ amount you want to deposit">
+                <button id="deposit">Deposit</button>
+            </div>
+            <div class="three">
+                <h1>Please withdraw</h1>
+                <input type="number" name="" id="withdraw_field" placeholder="$ amount you want to withdraw">
+                <button id="withdraw">Withdraw</button>
+            </div>
+        </div>
+    </div>
+    <script>
+        const dep_btn = document.getElementById("deposit");
+        const withdraw_btn = document.getElementById("withdraw");
+    
+        dep_btn.addEventListener('click', function () {
+            const dep_field = document.getElementById("deposit_field");
+            const doll = document.getElementById("taka");
+            const bal = document.getElementById("balance");
+    
+            const current_deposit = parseInt(doll.innerText);
+            const new_deposit = parseInt(dep_field.value);
+    
+            const updated_deposit = current_deposit + new_deposit;
+            doll.innerText = updated_deposit;
+    
+            const add_bal = parseInt(bal.innerText);
+            const updated_balance = add_bal + new_deposit;
+            bal.innerText = updated_balance;
+    
+            dep_field.value = "";
+        });
+    
+        withdraw_btn.addEventListener('click', function () {
+            const withdraw_field = document.getElementById("withdraw_field");
+            const doll = document.getElementById("tak");
+            const bal = document.getElementById("balance");
+    
+            const current_deposit = parseInt(doll.innerText);
+            const new_withdraw = parseInt(withdraw_field.value);
+    
+            const updated_deposit = current_deposit - new_withdraw;
+            doll.innerText = updated_deposit;
+    
+            const add_bal = parseInt(bal.innerText);
+            const updated_balance = add_bal - new_withdraw;
+            bal.innerText = updated_balance;
+    
+            withdraw_field.value = "";
+            
+        });
+    </script>
+    
+</body>
+</html>
